@@ -1,0 +1,121 @@
+React: a JS lib for building SPAs.
+SPA: Single Page App; a web app with ONE HTML page 
+and all the content is rendered dynamically.
+
+React may be used incrementally,
+that is, not ALL your app needs to be coded in React.
+The problem with dynamic JS web pages is theye are hard to bookmark,
+and hard to achieve good SEO
+Practically, app endpoints such as contact pages may be coded statically for these reasons.
+
+React comes to us from Facebook originally.
+It was a solution to their state management problems 
+(many users, many windows open, Messenger etc)
+Among others, Dan Abramov provided React and Facebook open-sourced
+Similarly, Google open sourced Angular
+Older apps written in Angular may well use the first version, AngularJS
+There were BREAKING CHANGES between AngularJS and Angular.
+React has to date no breaking changes but code written in the current version may well not run on older ones.
+
+So can we build an SPA with native JS (ie NOR using React, Angular)
+YES we can!
+
+So why choose React?
+    - two main over-arching resons:
+    - JSX; a tool for dynamically generating HTML
+    - Automatic re-rendering, data driven
+
+React assumes modern JS eg arrow functions, -> (Java) => (JS)
+in Java, functions with arrows (->) exist to substitute a fucntional interface (interface with only one method)
+when passed as a method argument to another method.
+In JS, arrow functions (=>) are much less restricted and may be used anywhere 
+as a substitute for an anonymous function expression
+
+JS:
+function declaration:
+function myFunc(){
+    //...
+}
+myFunc()
+function declarations are loaded into memory at the Start
+therefore they are available to any other part of the program
+
+function expression:
+const myFunc = function (){
+    //...
+}
+myFunc()
+function expressions are loaded into memory WHERE THEY OCCUR
+mostly, we can always use the first way, declarations, 
+but must use expressions, the second way, 
+when adding functions to the prototype property of a function constructor 
+(see examples)
+
+JS arrow function:
+const myFunc = ()=>{
+    //...
+}
+
+arrow functions have no context of "this"
+in classes, arrow functions default to the next scope level up
+which is the classes
+which generally works, 
+as they use the classe's context of this
+
+MORE modern JS methods include, destructuring, spread, imports and exports (modules)
+
+As of writing, now, the React docs heavily prescribe using React ONLY within a React framework.
+
+Their rationale for this is that the frameworks simplify API calls at scale, and threading data through the app.
+
+We find that problematic to delegates with no prior react knowledge.
+We stick to core React.
+
+Library (which React is, technically):  
+some pre-existing code. 
+A lawnmower rather than a pair of scissors for cutting grass - gets you there quicker.
+
+Framework:                              
+software that you effectively put your code into. 
+the framework then uses your code. A ride-on lawnmower.
+
+So we start by building an SPA WITHOUT React.
+
+Tools to help build SPAs:
+
+PACKAGE MANAGERS
+Control and facilitate the adding/removing of Node modulesThe core set for any build tool,
+Plus any we add ourselves.
+examples npm, yarn, chocolately
+npm comes ready installed with Node
+historically there were speed issues
+Yarn used to out-perform npm because of caching
+These days very little between due to imnprovements in npm
+
+BUNDLERS
+Take souce code, with Node modules dependencies
+Bundle JUST the code we use into ONE script
+Same for CSS as well.
+Examples Webpack, Parcel, Vite (we will be using Vite), Rollup (used by Vite)
+Webpack industry standard bundler
+Needs quite a lot of configuration
+Needs specific loaders for styles, images etc.
+
+TREESHAKING
+Is the process by which only the code needed to run the app is bundled for production.
+
+Bundlers run in two MODES:
+Development: a dev server is provided to preview the web page and for error reporting
+Production: Treeshaking eliminates dead/unused code. A single JS file and single CSS file are generated.
+
+TRANSPILERS
+called by bundlers, 
+take modern ES6+ code and convert it into ES5 or older compatible
+this ensures cross-browser compatibility.
+Examples Bable. See classes in JS.
+
+BUILD TOOLS FOR REACT SPECIFICALLY
+When React was invented, the Facebook team under Dan Abramov came up with creste-react-app, which scaffolded a whole Recat project in one line.
+Enormously popular to start with, then in last couple of years gave ground to Vite (faster, as name suggests in French)
+React docs recommended CRA for many years, then Vite.
+NOW, react docs strongly recommend (React) frameworks.

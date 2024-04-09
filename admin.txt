@@ -1,0 +1,32 @@
+Alan Lavender
+alanl@stayahead.com
+
+Schedule
+________
+
+9:30am      Start
+11:00am     First break
+12:30pm     Lunch (one hour)
+3:00pm      Second break
+4:30pm      Q&A/recap/formal finish
+5:00pm      End
+
+Outline
+________
+Intro
+Modern JS
+JSX
+Components & Props
+State & Lifecycle
+Event Handling
+Forms
+React Router
+Hooks
+React in Practice
+Redux etc.
+
+Software
+________
+Visual Studio Code
+NodeJS (version 18>)
+Google Chrome browser
