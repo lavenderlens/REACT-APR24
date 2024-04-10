@@ -20,7 +20,7 @@ export const Jsx = () => {
         ))}
         {/* conditional rendering:
               Jsx should NOT have loops or if else statements */}
-        if(true){<p>I am true</p>}
+        if(false){<p>I am true</p>}
         {/* renders anyway */}
       </ul>
       <p>My name is {names[0]}</p>

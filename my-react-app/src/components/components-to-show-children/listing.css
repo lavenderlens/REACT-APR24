@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+.card {
+  width: auto;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background: #fff;
+  color: #aaa;
+}
+.image {
+  width: 75%;
+  margin: 10px;
+  display: inline-block;
+}
+.description {
+  display: inline-block;
+}
