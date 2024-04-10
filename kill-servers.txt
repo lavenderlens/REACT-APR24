@@ -1,0 +1,22 @@
+Last login: Mon Apr  8 16:53:44 on ttys016
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5500
+Password:
+COMMAND     PID         USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME
+Code\x20H 28000 alanlavender   63u  IPv4 0x99d0f65aalaalanalanlaalanlaalanlalanlaalanalaaalaaaalanlavender@ALANs-MacBook-Pro ~ % kill -9 28000
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5500
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5501
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :3000
+COMMAND   PID         USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME
+node    49773 alanlavender   27u  IPv4 0x99d0f65c1897d11      0t0  TCP *:hbci (LISTEN)
+alanlavender@ALANs-MacBook-Pro ~ % kill -9 49773     
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :3001
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5173
+COMMAND   PID         USER   FD   TYPE            DEVICE SIZE/OFF NODE NAME
+node    60905 alanlavender   26u  IPv6 0x99d0f60ed325081      0t0  TCP localhost:5173 (LISTEN)
+alanlavender@ALANs-MacBook-Pro ~ % kill -9 60905     
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5174
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5172
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5171
+alanlavender@ALANs-MacBook-Pro ~ % sudo lsof -i :5170
+alanlavender@ALANs-MacBook-Pro ~ % 
+

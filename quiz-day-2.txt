@@ -1,0 +1,58 @@
+1. What are the two primary benefits of React?
+A: better for handling state AND re-renders
+JSX simplifies the "DX"
+also, web apps have faster responsiveness owing to no page reloads
+
+2. How does one create a template React project with Vite? 
+A: npm create vite@latest
+caveat: give new build tools time to settle
+a lot of devs are using Vite for development and Webpack for production
+create-react-app used to be the go to - no longer maintained
+
+progression here (recommended by React maintainers)
+1 create-react-app
+2 Vite
+3 Frameworks eg NextJs
+
+3. What is JSX?
+A: Combo of JS and HTML. Like xML, we write our own tag names BUT may also use the standard HTML ones.
+JSX favours componentised approach.
+Note JSX is compiled into JS for production. Bit like Typescript is compiled too. 
+
+4. How does one embed variables/expressions in JSX? 
+A: {}
+same with dollar sign and backticks is just js - template literal strings
+`${}`
+
+5. How does one handle conditions and loops in JSX?
+A: You don't!
+EITHER
+write them outside of the return, in ordinary JS
+this may cause problems with re-rendering although there is a Hook for that called useEffect()
+best way is to stick to the JSX and write
+
+instead of conditions: && (short circuit and operator) ?: (ternary operator)
+short circuit and swaps in some JSX conditionally, generally used for larger chunks of code 
+ternary operator forces a choice between two chunks of code, generally smaller
+
+instead of loops: map()
+JSX returned must be wrapped in () not {}
+
+6. What is a prop?
+A: data that is passed from a parent to a child component
+one way: top-down
+
+7. What should be child NOT do with regards props? (only covered briefly)
+A: shouldn't update (mutate) original value
+
+8. What are smart and dumb components?
+A: dumb component just renders data
+smart performs logic on the data before it displays it
+and passes it down to dumb
+data lives in smart components
+
+9. How does one start a development server in a Vite project?
+A: npm run dev
+
+10. How does one install all dependencies listed in package.json?
+A: npm i (for install, not init) if node modules removed OR for first time in a Vite project
