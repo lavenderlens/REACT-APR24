@@ -1,8 +1,12 @@
 import "./App.css";
+import Form from "./components/Form";
 import { Jsx } from "./components/Jsx";
 import Listing from "./components/Listing";
 import Props from "./components/Props";
+import ShoppingList from "./components/ShoppingList";
+import SideEffect from "./components/SideEffect";
 import State from "./components/State";
+
 // normal JS
 function App() {
   // normal JS
@@ -17,7 +21,10 @@ function App() {
       {/* <Jsx>TODO: React.children</Jsx> */}
       {/* <Props greeting={hello} farewell={farewell} message={message} /> */}
       {/* <Listing /> */}
-      <State />
+      {/* <State /> */}
+      {/* <ShoppingList /> */}
+      {/* <SideEffect /> */}
+      <Form title="Login Form" />
     </>
   );
 }

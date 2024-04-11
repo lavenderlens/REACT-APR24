@@ -4,3 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+
+button {
+  margin: 1em;
+}
+
+label,
+input {
+  display: block;
+  text-align: left;
+  margin-bottom: 1em;
+}
