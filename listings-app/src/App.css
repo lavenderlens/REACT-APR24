@@ -1,0 +1,16 @@
+button {
+  margin: 1em;
+}
+
+label#formLabel,
+input#email,
+input#username {
+  display: block;
+  text-align: left;
+  margin-bottom: 1em;
+}
+button#formBtn {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+}

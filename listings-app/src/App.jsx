@@ -4,28 +4,77 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Listing from "./components/Listing";
 import axios from "axios";
+import Header from "./components/Header";
+import Likes from "./components/Likes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ContactForm from "./components/ContactForm";
+import { hardCodedListings } from "./components/PropertyService";
 
 function App() {
-  const [listings, setListings] = useState([]);
+  ////////FOR DEV 🔽
+  // const [listings, setListings] = useState([]);
+  const [listings, setListings] = useState(hardCodedListings);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:4000/listings")
-      .then((response) => setListings(response.data));
-  }, []);
+  ////// FOR PRODUCTION 🔼
+  const [showListings, setShowListings] = useState(false);
+  const [likes, setLikes] = useState([]);
 
-  const handleLike = () => {
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:4000/listings")
+  //     .then((response) => setListings(response.data));
+  // }, []);
+  ////// FOR PRODUCTION comment out useEffect 🔼
+
+  // 1. lifting state up one level to parent
+  const handleShowListings = () => {
+    setShowListings(true);
+  };
+
+  // 2. lifting state up two levels to grandparent
+  const handleLike = (listing) => {
     //TODO
     console.log("I was liked.");
+    setLikes([listing, ...likes]);
   };
-  const h1Styles = "text-3xl text-center";
+  //testing likes working:
+  useEffect(() => {
+    console.log(likes);
+  }, [likes]);
+
   return (
     <>
-      <h1 className={h1Styles}>Listings App</h1>
-      <button>Show listings for </button>
-      <input className="border-2 border-gray-700 m-4" type="text" />
-      <Listing listings={listings} onlike={handleLike} />
-      <p>{}</p>
+      <BrowserRouter>
+        <Header title="Listings App" onShowListings={handleShowListings} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {showListings && (
+                  <Listing listings={listings} onLike={handleLike} />
+                )}
+              </>
+            }
+          />
+          <Route
+            path="/view-likes"
+            element={
+              <>
+                <Likes likes={likes} />
+              </>
+            }
+          />
+          <Route
+            path="/contact-us"
+            element={
+              <>
+                <ContactForm />
+              </>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
