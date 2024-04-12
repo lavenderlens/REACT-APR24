@@ -1,0 +1,44 @@
+Day 3 Quiz
+----------
+1. What does the useState function return?
+A: the state, and a function to update that state (also the initial state)
+
+2. State must NOT be modified directly. Why?
+A: it will not either share state across components OR trigger a re-render
+ 
+3. Closures in JS are a means for giving functions *what*?
+A: state
+ 
+4. A closure has at least one local variable. This variable is said to be *what* scoped?
+A: lexically-scoped
+ 
+5. What type of thing does a closure return?
+A: an (inner) function
+ 
+6. Will the following code throw an error?
+const name = "Dan";
+name = "Alan";
+A: YES, you may not re-assign to a const variable
+
+7. What about the following:
+const person = {name: "Alan"}
+person.name = "Dan";
+A: NO - this modification will take place
+ 
+8. When do we need to pass the children prop for nested components to render?
+// scenario A
+<div>
+    <p></p>
+</div>
+// scenario B
+<CustomComponent1>
+    <CustomComponent2></CustomComponent2>
+</CustomComponent1>
+A: B - nested custom components will not render without passing the children prop.
+Note: omitting the children props DOES NOT generate any errors
+
+9. CSS classes on React elements are denoted with what keyword?
+A: className
+ 
+10. What may we do with multiple CSS classes to ensure clean code in our JSX?
+A: put them in a variable outside the return and reference inside the JSX with JSX expression braces {}

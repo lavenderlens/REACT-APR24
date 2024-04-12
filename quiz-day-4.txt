@@ -1,0 +1,36 @@
+Day 3 Quiz
+----------
+1. Why is spread so commonly used when updating state?
+A: An existing list will be copied into a new once
+You may add new elements either at the beginning or the end
+
+2. Calling a useState setter function is an async operation. What does that mean?
+A: Does something LATER.
+An async function may go away from JS main thread and complete its work then return to the main thread
+
+3. How does one pass data from child component up to parent component?
+A: pass a function
+
+4. What is a side-effect?
+A: Something outside of React:
+code that runs after the DOM is built by React
+things that React has no knowledge or control over
+
+5. You should NEVER invoke a side-effect in the body of a component. Why?
+A: because React has no knowledge of it or control over it
+If in doubt, wrap code in a useEffect
+ 
+6. What arguments does the useEffect function accept?
+A: A function and a dependency array.
+
+7. Explain the purpose of useEffect's dependency array.
+A: To control when it should be run.
+
+8. when does a useEffect with an empty dependency array run?
+A: Once, when component mounts (on first render).
+
+9. When does a useEffect with an item of state in its dependency array run?
+A: Every time the state changes.
+
+10. Is it legitimate to call useState/useEffect many times in the same component?
+A: Yes. 
